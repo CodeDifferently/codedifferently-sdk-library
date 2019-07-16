@@ -95,7 +95,7 @@ echo "Unzipping MySQL version 5.7.26 installer"
 
 :: download PHP installer
 echo "downloading PHP installer"
-curl -o php-installer.zip https://windows.php.net/downloads/releases/php-7.2.20-Win32-VC15-x64.zip
+curl -o C:\php.zip https://windows.php.net/downloads/releases/php-7.2.20-Win32-VC15-x64.zip
 
 echo "Unzipping PHP Installer"
 "C:\Program Files\7-Zip\7z.exe" x php-installer.zip
