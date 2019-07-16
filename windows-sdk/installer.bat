@@ -31,22 +31,21 @@ bitsadmin.exe /transfer "Downloading PHP installer" https://windows.php.net/down
 echo "downloading Apache installer"
 bitsadmin.exe /transfer "Downloading Apache installer" https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip "%cd%\apache-installer.zip"
 
+echo "Downloading Chrome installer"
+start iexplore.exe https://www.google.com/chrome/thank-you.html?statcb=1&installdataindex=defaultbrowser#
+
 :: install `Notepad++` application to edit projects
 echo "downloading Notepad++ installer..."
-start chrome https://download.cnet.com/Notepad/3001-2352_4-10327521.html
+start iexplore.exe https://download.cnet.com/Notepad/3001-2352_4-10327521.html
 
 :: install `Visual Studio Code` application to edit projects
 echo "downloading Visual Studio Code installer..."
-start chrome https://aka.ms/win32-x64-user-stable
+start iexplore.exe https://aka.ms/win32-x64-user-stable
 
 
 
 
 
-
-
-:: open downloads directory
-start explorer "%userprofile%\Downloads"
 
 
 
@@ -87,3 +86,8 @@ start intellij-community-v2019.1.3.exe
 echo "Unzipping files zipped files"
 "C:\Program Files\7-Zip\7z.exe" x mysql-installer5.7.26.zip
 "C:\Program Files\7-Zip\7z.exe" x apache-installer.zip
+
+
+
+:: open downloads directory
+start explorer "%userprofile%\Downloads"
