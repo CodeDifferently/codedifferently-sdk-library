@@ -1,0 +1,1 @@
+http://img3.wikia.nocookie.net/__cb20141104203135/lionking/images/3/30/The_lion_king_cursor_by_pouasson_de_oro-d5jagp7.png
