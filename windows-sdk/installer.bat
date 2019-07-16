@@ -44,6 +44,7 @@ start node-v10.16.0-x64.msi
 :: install `python` installer to run `python` utilities.
 echo "downloading Python installer installer..."
 bitsadmin.exe /transfer "Downloading Node installer" https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe "%cd%\python-v3.7.3-installer.exe"
+:: curl -o python-v3.7.3-installer.exe https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe
 
 echo "Installing python3"
 start python-v3.7.3-installer.exe
