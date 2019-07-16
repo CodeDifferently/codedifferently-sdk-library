@@ -34,6 +34,8 @@ bitsadmin.exe /transfer "Downloading MySQL-v5.7.26 installer" https://dev.mysql.
 
 
 
+:: open downloads directory
+start explorer "%userprofile%\Downloads"
 
 :: unzip download
 echo "Unzipping files zipped files"
@@ -57,6 +59,3 @@ start python-v3.7.3-installer.exe
 echo "Installing IntelliJ"
 start intellij-community-v2019.1.3.exe
 
-
-:: open downloads directory
-start explorer "%userprofile%/Downloads"
