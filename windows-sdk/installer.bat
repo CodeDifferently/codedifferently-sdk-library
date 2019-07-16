@@ -54,22 +54,6 @@ start python-v3.7.3-installer.exe
 
 
 
-
-
-:: install `IntelliJ Idea` installer to edit projects
-echo "downloading IntelliJ installer..."
-bitsadmin.exe /transfer "Downloading IntelliJ installer" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe "%cd%\intellij-community-v2019.1.3.exe"
-
-echo "Installing Intellij"
-start intellij-community-v2019.1.3.exe
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
 :: wait for user to install `7zip`
 echo "Do not continue until 7Zip has completed installation."
 @echo off
@@ -174,53 +158,6 @@ start iexplore.exe https://aka.ms/win32-x64-user-stable
 
 
 
-
-echo "Installing gitbash"
-start gitbash-installer.exe
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-echo "Installing node"
-start node-v10.16.0-x64.msi
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-echo "Installing python-v3.7.3"
-start python-v3.7.3-installer.exe
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-echo "Installing IntelliJ"
-start intellij-community-v2019.1.3.exe
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
 :: unzip download
 echo "Unzipping files zipped files"
 "C:\Program Files\7-Zip\7z.exe" x mysql-installer5.7.26.zip
@@ -244,5 +181,16 @@ start explorer "%userprofile%\Downloads"
 
 
 
+
+
+
+
+:: install `IntelliJ Idea` installer to edit projects
+echo "downloading IntelliJ installer..."
+bitsadmin.exe /transfer "Downloading IntelliJ installer" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe "%cd%\intellij-community-v2019.1.3.exe"
+
+echo "Installing Intellij"
+start intellij-community-v2019.1.3.exe
+:: -----------------------------------------------------------------------------------------
 
 
