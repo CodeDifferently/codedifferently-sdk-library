@@ -1,6 +1,6 @@
 :: install `7zip` installer to unzip projects from command line
 echo "downloading 7zip installer..."
-bitsadmin.exe /transfer "Downloading 7Zip installer" https://www.7-zip.org/a/7z1900-x64.exe "%cd%\7zip-installer.exe"
+curl -o 7zip-installer.exe https://www.7-zip.org/a/7z1900-x64.exe
 
 echo "Installing 7zip"
 start 7zip-installer.exe
@@ -11,7 +11,9 @@ start 7zip-installer.exe
 
 :: install `Git Bash` installer to clone projects from command line
 echo "downloading Git-Bash installer..."
-bitsadmin.exe /transfer "Downloading Git Bash installer" https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe "%cd%\gitbash-installer.exe"
+curl -o gitbash-installer.exe https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe
+
+
 
 echo "Installing GitBash"
 start gitbash-installer.exe
@@ -25,7 +27,7 @@ start gitbash-installer.exe
 
 :: install `Node` installer to create projects with `Node.js`
 echo "downloading NPM installer..."
-bitsadmin.exe /transfer "Downloading Node installer" https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi "%cd%\node-v10.16.0-x64.msi"
+curl -o node-v10.16.0-x64.msi https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi
 
 echo "Installing NodeJS"
 start node-v10.16.0-x64.msi
@@ -43,8 +45,7 @@ start node-v10.16.0-x64.msi
 
 :: install `python` installer to run `python` utilities.
 echo "downloading Python installer installer..."
-bitsadmin.exe /transfer "Downloading Node installer" https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe "%cd%\python-v3.7.3-installer.exe"
-:: curl -o python-v3.7.3-installer.exe https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe
+curl -o python-v3.7.3-installer.exe https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe
 
 echo "Installing python3"
 start python-v3.7.3-installer.exe
@@ -75,7 +76,7 @@ endlocal
 
 :: download `MySQL 5.7.26` installer
 echo "downloading MySQL version 5.7.26 installer"
-bitsadmin.exe /transfer "Downloading MySQL-v5.7.26 installer" https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip "%cd%\mysql-installer5.7.26.zip"
+curl -o mysql-installer5.7.26.zip https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip
 
 echo "Unzipping MySQL version 5.7.26 installer"
 "C:\Program Files\7-Zip\7z.exe" x mysql-installer5.7.26.zip
@@ -94,7 +95,7 @@ echo "Unzipping MySQL version 5.7.26 installer"
 
 :: download PHP installer
 echo "downloading PHP installer"
-bitsadmin.exe /transfer "Downloading PHP installer" https://windows.php.net/downloads/releases/php-7.2.20-Win32-VC15-x64.zip "%cd%\php-installer.zip"
+curl -o php-installer.zip https://windows.php.net/downloads/releases/php-7.2.20-Win32-VC15-x64.zip
 
 echo "Unzipping PHP Installer"
 "C:\Program Files\7-Zip\7z.exe" x php-installer.zip
@@ -109,7 +110,7 @@ echo "Unzipping PHP Installer"
 
 :: download `Apache2` installer
 echo "downloading Apache installer"
-bitsadmin.exe /transfer "Downloading Apache installer" https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip "%cd%\apache-installer.zip"
+curl -o apache-installer.zip https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip
 
 echo "Unzipping Apache Installer"
 "C:\Program Files\7-Zip\7z.exe" x apache-installer.zip
@@ -188,10 +189,9 @@ start explorer "%userprofile%\Downloads"
 
 :: install `IntelliJ Idea` installer to edit projects
 echo "downloading IntelliJ installer..."
-bitsadmin.exe /transfer "Downloading IntelliJ installer" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe "%cd%\intellij-community-v2019.1.3.exe"
+curl -o intellij-community-v2019.1.3.exe https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe
 
 echo "Installing Intellij"
 start intellij-community-v2019.1.3.exe
 :: -----------------------------------------------------------------------------------------
-
 
