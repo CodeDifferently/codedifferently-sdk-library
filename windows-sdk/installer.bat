@@ -1,11 +1,3 @@
-:: install `Notepad++` application to edit projects
-echo "downloading Notepad++ installer..."
-start chrome https://download.cnet.com/Notepad/3001-2352_4-10327521.html
-
-:: install `Visual Studio Code` application to edit projects
-echo "downloading Visual Studio Code installer..."
-start chrome https://aka.ms/win32-x64-user-stable
-
 :: install `7zip` application to unzip projects from command line
 echo "downloading 7zip installer..."
 bitsadmin.exe /transfer "Downloading 7Zip installer" https://www.7-zip.org/a/7z1900-x64.exe "%cd%\7zip-installer.exe"
@@ -31,6 +23,14 @@ bitsadmin.exe /transfer "Downloading IntelliJ installer" https://download.jetbra
 :: download MySQL 5.7.26
 echo "downloading MySQL version 5.7.26 installer"
 bitsadmin.exe /transfer "Downloading MySQL-v5.7.26 installer" https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-winx64.zip "%cd%\mysql-installer5.7.26.zip"
+
+:: install `Notepad++` application to edit projects
+echo "downloading Notepad++ installer..."
+start chrome https://download.cnet.com/Notepad/3001-2352_4-10327521.html
+
+:: install `Visual Studio Code` application to edit projects
+echo "downloading Visual Studio Code installer..."
+start chrome https://aka.ms/win32-x64-user-stable
 
 
 
