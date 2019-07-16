@@ -7,29 +7,41 @@ echo downloading Visual Studio Code installer...
 start chrome https://aka.ms/win32-x64-user-stable
 
 :: install `7zip` application to unzip projects from command line
+echo downloading 7zip installer...
 bitsadmin.exe /transfer "Downloading 7Zip installer" https://www.7-zip.org/a/7z1900-x64.exe "%cd%\7zip-installer.exe"
-start 7zip-installer.exe
-
 
 :: install `Git Bash` application to clone projects from command line
 echo downloading Git-Bash installer...
 bitsadmin.exe /transfer "Downloading Git Bash installer" https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe "%cd%\gitbash-installer.exe"
-gitbash-installer.exe
-
 
 :: install `Node` application to create projects with `Node.js`
 echo downloading NPM installer...
 bitsadmin.exe /transfer "Downloading Node installer" https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi "%cd%\node-v10.16.0-x64.msi"
-start node-v10.16.0-x64.msi
 
 
 :: install `python` application to run `python` utilities.
 echo downloading Python installer...
 bitsadmin.exe /transfer "Downloading Node installer" https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe "%cd%\python-v3.7.3-installer.exe"
-start python-v3.7.3-installer.exe
 
 
 :: install `IntelliJ Idea` application to edit projects
 echo downloading IntelliJ...
 bitsadmin.exe /transfer "Downloading IntelliJ installer" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe "%cd%\intellij-community-v2019.1.3.exe"
+
+
+
+:: installing installers
+echo "Installing 7zip"
+start 7zip-installer.exe
+
+echo "Installing gitbash"
+start gitbash-installer.exe
+
+echo "Installing node"
+start node-v10.16.0-x64.msi
+
+echo "Installing python-v3.7.3"
+start python-v3.7.3-installer.exe
+
+echo "Installing IntelliJ"
 start intellij-community-v2019.1.3.exe
