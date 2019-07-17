@@ -98,8 +98,24 @@ echo "downloading PHP installer"
 curl -o C:\php.zip https://windows.php.net/downloads/releases/php-7.2.20-Win32-VC15-x64.zip
 
 echo "Unzipping PHP Installer"
-"C:\Program Files\7-Zip\7z.exe" x php-installer.zip
+"C:\Program Files\7-Zip\7z.exe" x C:\php.zip
 :: -----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+:: download `phpMyAdmin`
+echo "downloading phpMyAdmin installer"
+curl -o phpMyAdmin-v4.9.0.1.zip https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.zip
+
+echo "Unzipping phpMyAdmin installer"
+"C:\Program Files\7-Zip\7z.exe" x phpMyAdmin-v4.9.0.1.zip
+:: -----------------------------------------------------------------------------------------
+
 
 
 
@@ -121,6 +137,11 @@ echo "Unzipping Apache Installer"
 
 
 
+
+
+
+
+:: Download Chrome installer
 echo "Downloading Chrome installer"
 start iexplore.exe https://www.google.com/chrome/thank-you.html?statcb=1&installdataindex=defaultbrowser#
 :: -----------------------------------------------------------------------------------------
