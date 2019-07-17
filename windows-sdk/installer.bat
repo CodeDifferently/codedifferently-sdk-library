@@ -46,7 +46,7 @@ start apache-installer.msi
 
 :: `WebPlatformInstaller` is a PHP installer tool for windows
 echo "downloading WebPlatformInstaller installer"
-curl -o "webplatforminstaller-installer.msi" "https://download.microsoft.com/download/8/4/9/849DBCF2-DFD9-49F5-9A19-9AEE5B29341A/WebPlatformInstaller_x86_en-US.msi"
+curl -o "webplatforminstaller-installer.msi" "https://download.microsoft.com/download/8/4/9/849DBCF2-DFD9-49F5-9A19-9AEE5B29341A/WebPlatformInstaller_x64_en-US.msi"
 
 echo "Unzipping WebPlatformInstaller Installer"
 start webplatforminstaller-installer.msi
