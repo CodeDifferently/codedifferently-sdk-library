@@ -1,31 +1,17 @@
-
-
-
-
-
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
-:: prompt user to install IntelliJ
-echo "Would you like to download and install '7Zip'?"
+:: prompt user to install Chocolatey
+echo "Would you like to download and install 'Chocolatey', the Windows Package Manager?"
 @echo off
 setlocal
 :PROMPT
 SET /P AREYOUSURE=Are you sure (Y/[N])?
 IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
-:: -----------------------------------------------------------------------------------------
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
-
-
-:: -----------------------------------------------------------------------------------------
-:: install '7zip' installer to unzip projects from command line
-echo "downloading 7zip installer..."
-curl -o "7zip-installer.exe" "https://www.7-zip.org/a/7z1900-x64.exe"
-
-echo "Installing 7zip"
-start 7zip-installer.exe
-
+@echo off
 :END
 endlocal
 :: -----------------------------------------------------------------------------------------
@@ -50,11 +36,56 @@ endlocal
 
 
 
+
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
-:: prompt user to install IntelliJ
+:: prompt user to install curl
+echo "Would you like to download and install 'curl', the webrequest tool?"
+@echo off
+setlocal
+:PROMPT
+SET /P AREYOUSURE=Are you sure (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+choco upgrade
+choco upgrade curl
+choco install curl
+
+@echo off
+:END
+endlocal
+:: -----------------------------------------------------------------------------------------
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+:: -----------------------------------------------------------------------------------------
+:: prompt user to install git-bash
 echo "Would you like to download and install 'git-bash'?"
 @echo off
 setlocal
@@ -79,6 +110,11 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
+
+
+
+
+
 
 
 
@@ -135,7 +171,7 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
-:: prompt user to install IntelliJ
+:: prompt user to install Node.js
 echo "Would you like to download and install 'Node.js'?"
 @echo off
 setlocal
@@ -185,7 +221,7 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
-:: prompt user to install IntelliJ
+:: prompt user to install Notepad++
 echo "Would you like to download and install 'Notepad++'?"
 @echo off
 setlocal
@@ -360,7 +396,8 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
-:: prompt user to install Wamp
+:: prompt user to install Wamp; Apache, PHP, and MySQL
+echo "Wamp includes installations of Apache, PHP, and MySQL"
 echo "Would you like to download and install Wamp?"
 @echo off
 setlocal
@@ -374,7 +411,6 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: Download Chrome installer
 echo "Downloading Wamp installer"
-start iexplore.exe 
 
 @echo off
 start/min iexplore https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.9_x64.exe/download?use_mirror=newcontinuum&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fwampserver%2Ffiles%2Flatest%2Fdownload
@@ -393,15 +429,4 @@ endlocal
 
 
 
-
-:: -----------------------------------------------------------------------------------------
-:: open downloads directory
-start explorer "%userprofile%\Downloads
-:: -----------------------------------------------------------------------------------------
-
-
-
-
-
-
-
+exit
