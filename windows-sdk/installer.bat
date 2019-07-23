@@ -98,7 +98,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Git Bash' installer to clone projects from command line
 echo "downloading Git-Bash installer..."
-curl -o "gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
+curl -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
 
 
 echo "Installing GitBash"
@@ -145,7 +145,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'python' installer to run 'python' utilities.
 echo "downloading Python installer installer..."
-curl -o "python-v3.7.3-installer.exe" "https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe"
+curl -o "%cd%\python-v3.7.3-installer.exe" "https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe"
 
 echo "Installing python3"
 start python-v3.7.3-installer.exe
@@ -185,7 +185,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Node' installer to create projects with 'Node.js'
 echo "downloading NPM installer..."
-curl -o "node-v10.16.0-x64.msi" "https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi"
+curl -o "%cd%\node-v10.16.0-x64.msi" "https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi"
 
 echo "Installing NodeJS"
 start node-v10.16.0-x64.msi
@@ -233,9 +233,9 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 
 
 :: -----------------------------------------------------------------------------------------
-:: install 'Notepad++' installer to run 'Notepad++' utilities.
+:: install 'Notepad++' text editor
 echo "downloading Notepad++ installer installer..."
-curl -o "npp-installer.exe" "https://files.downloadnow-1.com/s/software/16/46/10/52/npp.7.7.1.Installer.exe?token=1563418694_6ce5e51e92378f5a924729ca21824e20&fileName=npp.7.7.1.Installer.exe"
+curl -o "%cd%\npp-installer.exe" "https://files.downloadnow-1.com/s/software/16/46/10/52/npp.7.7.1.Installer.exe?token=1563418694_6ce5e51e92378f5a924729ca21824e20&fileName=npp.7.7.1.Installer.exe"
 
 echo "Installing Notepad++"
 start npp-installer.exe
@@ -283,7 +283,8 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'VSCode' to edit code
 echo "downloading Visual Studio Code installer installer..."
-curl -o "vscode-installer.exe" "https://az764295.vo.msecnd.net/stable/2213894ea0415ee8c85c5eea0d0ff81ecc191529/VSCodeUserSetup-ia32-1.36.1.exe"
+curl -o "%cd%\7zip-installer.exe" "https://www.7-zip.org/a/7z1900-x64.exe"
+curl -o "%cd%\vscode-installer.exe" "https://az764295.vo.msecnd.net/stable/2213894ea0415ee8c85c5eea0d0ff81ecc191529/VSCodeUserSetup-ia32-1.36.1.exe"
 
 echo "Installing Visual Studio Code"
 start vscode-installer.exe
@@ -321,9 +322,9 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 
 
 :: -----------------------------------------------------------------------------------------
-:: install 'IntelliJ Idea' installer to edit projects
+:: install 'IntelliJ Idea'  to edit projects
 echo "downloading IntelliJ installer..."
-curl -o intellij-community-v2019.1.3.exe https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe
+curl -o "%cd%\intellij-community-v2019.1.3.exe" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe
 
 echo "Installing Intellij"
 start intellij-community-v2019.1.3.exe
@@ -333,6 +334,52 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+:: -----------------------------------------------------------------------------------------
+:: prompt user to install wordpress
+echo "Would you like to download 'Wordpress'?"
+@echo off
+setlocal
+:PROMPT
+SET /P AREYOUSURE=Are you sure (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+:: -----------------------------------------------------------------------------------------
+
+
+
+:: -----------------------------------------------------------------------------------------
+:: install 'IntelliJ Idea' installer to edit projects
+echo "downloading Wordpress installer..."
+curl -o "%cd%\wordpress.zip" https://wordpress.org/latest.zip
+
+
+echo "unzipping 'wordpress.zip'"
+start "C:\Program Files\7-Zip\7z.exe" x wordpress.zip
+:END
+endlocal
+:: -----------------------------------------------------------------------------------------
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+
+
 
 
 
@@ -383,6 +430,10 @@ endlocal
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
+
+
+
+
 
 
 
