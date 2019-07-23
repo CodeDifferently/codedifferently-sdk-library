@@ -28,7 +28,7 @@
 3. From Visual Studio Code, select `Add Folder To Workspace`.
     * Select the following directory: `C:\wamp64\www\wordpress`
 4. edit `wp-config-sample.php`
-    * edit `line 19` by renaming `'database_name_here'` to `wordpress
+    * edit `line 19` by renaming `'database_name_here'` to `wordpress`
     * edit `line 22` by renaming `'username_here'` to `'root'`.
     * edit `line 25` by setting `'password_here'` to `''`
 5. Save the newly edited `wp-config-sample.php` as a new file named `wp-config.php`
