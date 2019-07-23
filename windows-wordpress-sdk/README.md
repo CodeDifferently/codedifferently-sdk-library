@@ -1,12 +1,18 @@
 
 ### Install WAMP
-1. Download and install WAMP
-2. ensure WAMP selects `chrome` as its browser.
-3. Chrome can be found here:
-4. `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
+1. Download and install [WAMP](https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.9_x64.exe/download?use_mirror=newcontinuum&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fwampserver%2Ffiles%2Flatest%2Fdownload).
+2. When WAMP prompts you to select a browser, select [chrome](https://www.google.com/chrome/thank-you.html?statcb=1&installdataindex=defaultbrowser#).
+    * The chrome directory path can be found here
+        * `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
+
 
 ### Running WAMP
 1. Start the newly installed WAMP application.
+    * You can either
+        1. Select WAMP from the start menu
+        2. Execute the following command in the terminal:
+            * `start C:\wamp64\wampmanager.exe`
+    
 2. Navigate to `http://localhost/phpmyadmin/index.php`
 3. Select the `databases` tab
 4. Create a database named `wordpress`.
