@@ -12,8 +12,13 @@
         1. Select WAMP from the start menu
         2. Execute the following command in the terminal:
             * `start C:\wamp64\wampmanager.exe`
-    
-2. Navigate to `http://localhost/phpmyadmin/index.php`
+
+### Manage phpMyAdmin
+1. Navigate to `http://localhost/phpmyadmin/index.php`
+2. Enter `root` for the username.
+3. press enter
+
+### Manage databases
 3. Select the `databases` tab
 4. Create a database named `wordpress`.
 
