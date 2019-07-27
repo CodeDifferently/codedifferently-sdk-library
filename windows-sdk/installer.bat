@@ -33,17 +33,17 @@
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
 :: prompt user to install Chocolatey
-echo "Would you like to download and install 'Chocolatey', the Windows Package Manager?"
-@echo off
-setlocal
-:PROMPT
-SET /P AREYOUSURE=Are you sure (Y/[N])?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+REM echo "Would you like to download and install 'Chocolatey', the Windows Package Manager?"
+REM @echo off
+REM setlocal
+REM :PROMPT
+REM SET /P AREYOUSURE=Are you sure (Y/[N])?
+REM IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+REM @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
-@echo off
-:END
-endlocal
+REM @echo off
+REM :END
+REM endlocal
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
@@ -72,20 +72,20 @@ endlocal
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
 :: prompt user to install curl
-echo "Would you like to download and install 'curl', the webrequest tool?"
-@echo off
-setlocal
-:PROMPT
-SET /P AREYOUSURE=Are you sure (Y/[N])?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+REM echo "Would you like to download and install 'curl', the webrequest tool?"
+REM @echo off
+REM setlocal
+REM :PROMPT
+REM SET /P AREYOUSURE=Are you sure (Y/[N])?
+REM IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 
 
-iex https://curl.haxx.se/windows/dl-7.65.3/curl-7.65.3-win64-mingw.zip
+REM iex https://curl.haxx.se/windows/dl-7.65.3/curl-7.65.3-win64-mingw.zip
 
 
-@echo off
-:END
-endlocal
+REM @echo off
+REM :END
+REM endlocal
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
