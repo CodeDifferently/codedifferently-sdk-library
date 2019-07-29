@@ -3,7 +3,7 @@
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
 :: rename bin
-ren "./resources/curl/binn/curl.exe" "./resources/curl/bin/curl.exe"
+ren "./resources/curl/binn/" "./resources/curl/bin/"
 
 :: configure aliases
 @DOSKEY unzip =  "./resources/native-zipper/unzipper.vbs" $* 
