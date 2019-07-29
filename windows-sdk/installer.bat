@@ -5,7 +5,7 @@
 :: configure aliases
 @DOSKEY unzip =  "./resources/native-zipper/unzipper.vbs" $* 
 @DOSKEY zip =  "./resources/native-zipper/zipper.vbs" $* 
-@DOSKEY curl = "./resources/curl/bin/curl.exe" $*
+@DOSKEY "./resources/curl/bin/curl.exe" = "./resources/curl/bin/curl.exe" $*
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
@@ -33,17 +33,17 @@
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
 :: prompt user to install Chocolatey
-REM echo "Would you like to download and install 'Chocolatey', the Windows Package Manager?"
-REM @echo off
-REM setlocal
-REM :PROMPT
-REM SET /P AREYOUSURE=Are you sure (Y/[N])?
-REM IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
-REM @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+:: >> echo "Would you like to download and install 'Chocolatey', the Windows Package Manager?"
+:: >> @echo off
+:: >> setlocal
+:: >> :PROMPT
+:: >> SET /P AREYOUSURE=Are you sure (Y/[N])?
+:: >> IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+:: >> @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
-REM @echo off
-REM :END
-REM endlocal
+:: >> @echo off
+:: >> :END
+:: >> endlocal
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
@@ -72,20 +72,20 @@ REM endlocal
 :: ##########################################################################################
 :: -----------------------------------------------------------------------------------------
 :: prompt user to install curl
-REM echo "Would you like to download and install 'curl', the webrequest tool?"
-REM @echo off
-REM setlocal
-REM :PROMPT
-REM SET /P AREYOUSURE=Are you sure (Y/[N])?
-REM IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+:: >> echo "Would you like to download and install 'curl', the webrequest tool?"
+:: >> @echo off
+:: >> setlocal
+:: >> :PROMPT
+:: >> SET /P AREYOUSURE=Are you sure (Y/[N])?
+:: >> IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 
 
-REM iex https://curl.haxx.se/windows/dl-7.65.3/curl-7.65.3-win64-mingw.zip
+:: >> iex https://curl.haxx.se/windows/dl-7.65.3/curl-7.65.3-win64-mingw.zip
 
 
-REM @echo off
-REM :END
-REM endlocal
+:: >> @echo off
+:: >> :END
+:: >> endlocal
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
@@ -129,7 +129,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Git Bash' installer to clone projects from command line
 echo "downloading Git-Bash installer..."
-curl -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
 
 
 echo "Installing GitBash"
@@ -176,7 +176,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'python' installer to run 'python' utilities.
 echo "downloading Python installer installer..."
-curl -o "%cd%\python-v3.7.3-installer.exe" "https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\python-v3.7.3-installer.exe" "https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe"
 
 echo "Installing python3"
 start python-v3.7.3-installer.exe
@@ -216,7 +216,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Node' installer to create projects with 'Node.js'
 echo "downloading NPM installer..."
-curl -o "%cd%\node-v10.16.0-x64.msi" "https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi"
+"./resources/curl/bin/curl.exe" -o "%cd%\node-v10.16.0-x64.msi" "https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi"
 
 echo "Installing NodeJS"
 start node-v10.16.0-x64.msi
@@ -266,7 +266,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Notepad++' text editor
 echo "downloading Notepad++ installer installer..."
-curl -o "%cd%\npp-installer.exe" "https://files.downloadnow-1.com/s/software/16/46/10/52/npp.7.7.1.Installer.exe?token=1563418694_6ce5e51e92378f5a924729ca21824e20&fileName=npp.7.7.1.Installer.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\npp-installer.exe" "https://files.downloadnow-1.com/s/software/16/46/10/52/npp.7.7.1.Installer.exe?token=1563418694_6ce5e51e92378f5a924729ca21824e20&fileName=npp.7.7.1.Installer.exe"
 
 echo "Installing Notepad++"
 start npp-installer.exe
@@ -314,8 +314,8 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'VSCode' to edit code
 echo "downloading Visual Studio Code installer installer..."
-curl -o "%cd%\7zip-installer.exe" "https://www.7-zip.org/a/7z1900-x64.exe"
-curl -o "%cd%\vscode-installer.exe" "https://az764295.vo.msecnd.net/stable/2213894ea0415ee8c85c5eea0d0ff81ecc191529/VSCodeUserSetup-ia32-1.36.1.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\7zip-installer.exe" "https://www.7-zip.org/a/7z1900-x64.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\vscode-installer.exe" "https://az764295.vo.msecnd.net/stable/2213894ea0415ee8c85c5eea0d0ff81ecc191529/VSCodeUserSetup-ia32-1.36.1.exe"
 
 echo "Installing Visual Studio Code"
 start vscode-installer.exe
@@ -355,7 +355,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'IntelliJ Idea'  to edit projects
 echo "downloading IntelliJ installer..."
-curl -o "%cd%\intellij-community-v2019.1.3.exe" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe
+"./resources/curl/bin/curl.exe" -o "%cd%\intellij-community-v2019.1.3.exe" https://download.jetbrains.com/idea/ideaIC-2019.1.3.exe
 
 echo "Installing Intellij"
 start intellij-community-v2019.1.3.exe
@@ -398,7 +398,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'IntelliJ Idea' installer to edit projects
 echo "downloading Wordpress installer..."
-curl -o "%cd%\wordpress.zip" https://wordpress.org/latest.zip
+"./resources/curl/bin/curl.exe" -o "%cd%\wordpress.zip" https://wordpress.org/latest.zip
 
 
 echo "unzipping 'wordpress.zip'"
