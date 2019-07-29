@@ -136,6 +136,7 @@ echo "downloading Git-Bash installer..."
 
 
 echo "Installing GitBash"
+set __compat_layer=win7
 start gitbash-installer.exe
 
 :END
