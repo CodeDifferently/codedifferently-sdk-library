@@ -60,6 +60,8 @@ echo "downloading Git-Bash installer..."
 
 echo "Installing GitBash"
 set __compat_layer=win7
+reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /T REG_SZ /D CompatibilityMode /F
+reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /d "WIN7"
 start gitbash-installer.exe
 
 :END
