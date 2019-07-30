@@ -8,7 +8,7 @@ ren "./resources/curl/binn/" "bin"
 :: configure aliases
 @DOSKEY unzip =  "./resources/native-zipper/unzipper.vbs" $* 
 @DOSKEY zip =  "./resources/native-zipper/zipper.vbs" $* 
-@DOSKEY "./resources/curl/bin/curl.exe" = "./resources/curl/bin/curl.exe" $*
+@DOSKEY curl = "./resources/curl/bin/curl.exe" $*
 :: -----------------------------------------------------------------------------------------
 :: ##########################################################################################
 :: ##########################################################################################
