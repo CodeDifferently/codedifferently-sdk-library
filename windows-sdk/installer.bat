@@ -375,7 +375,7 @@ echo "downloading Wordpress installer..."
 
 
 echo "unzipping 'wordpress.zip'"
-start "C:\Program Files\7-Zip\7z.exe" x wordpress.zip
+start "./resources/native-zipper/unzipper.vbs" wordpress.zip
 :END
 endlocal
 :: -----------------------------------------------------------------------------------------
