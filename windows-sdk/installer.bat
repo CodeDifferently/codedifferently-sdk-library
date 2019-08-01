@@ -218,6 +218,59 @@ endlocal
 
 
 
+
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+:: -----------------------------------------------------------------------------------------
+:: prompt user to install Microsoft Visual C++ Redistributable for Visual Studio++
+echo "'Microsoft Visual C++ Redistributable for Visual Studio++' is a dependency for WAMP"
+echo "Wamp includes installations of Apache, PHP, and MySQL"
+echo "Would you like to download and install 'MVC++' ?"
+@echo off
+setlocal
+:PROMPT
+SET /P AREYOUSURE=Are you sure (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+:: -----------------------------------------------------------------------------------------
+
+
+
+:: -----------------------------------------------------------------------------------------
+:: install 'Microsoft Visual C++ Redistributable for Visual Studio++' text editor
+echo "downloading Microsoft Visual C++ Redistributable for Visual Studio++' installer..."
+"./resources/curl/bin/curl.exe" -o "%cd%\mvc_redist-installer.exe" "https://aka.ms/vs/16/release/vc_redist.x64.exe"
+
+echo "Installing Microsoft Visual C++ Redistributable for Visual Studio++'"
+start mvc_redist-installer
+:END
+endlocal
+:: -----------------------------------------------------------------------------------------
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
