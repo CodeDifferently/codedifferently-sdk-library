@@ -37,55 +37,6 @@ ren "./resources/curl/binn/" "bin"
 
 
 
-
-:: ##########################################################################################
-:: ##########################################################################################
-:: ##########################################################################################
-:: -----------------------------------------------------------------------------------------
-:: prompt user to install git-bash
-echo "Would you like to download and install 'git-bash'?"
-@echo off
-setlocal
-:PROMPT
-SET /P AREYOUSURE=Are you sure (Y/[N])?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
-
-
-
-:: -----------------------------------------------------------------------------------------
-:: install 'Git Bash' installer to clone projects from command line
-echo "downloading Git-Bash installer..."
-"./resources/curl/bin/curl.exe" -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
-
-
-echo "Installing GitBash"
-set __compat_layer=win7
-reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /T REG_SZ /D CompatibilityMode /F
-reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /d "WIN7"
-start gitbash-installer.exe
-
-:END
-endlocal
-:: -----------------------------------------------------------------------------------------
-:: ##########################################################################################
-:: ##########################################################################################
-:: ##########################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: ##########################################################################################
 :: ##########################################################################################
 :: ##########################################################################################
@@ -314,6 +265,61 @@ endlocal
 
 
 
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+:: -----------------------------------------------------------------------------------------
+:: prompt user to install git-bash
+echo "Would you like to download and install 'git-bash'?"
+@echo off
+setlocal
+:PROMPT
+SET /P AREYOUSURE=Are you sure (Y/[N])?
+IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
+
+
+
+:: -----------------------------------------------------------------------------------------
+:: install 'Git Bash' installer to clone projects from command line
+echo "downloading Git-Bash installer..."
+"./resources/curl/bin/curl.exe" -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
+
+
+echo "Installing GitBash"
+set __compat_layer=win7
+reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /T REG_SZ /D CompatibilityMode /F
+reg Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "./gitbash-installer.exe" /d "WIN7"
+start gitbash-installer.exe
+
+:END
+endlocal
+:: -----------------------------------------------------------------------------------------
+:: ##########################################################################################
+:: ##########################################################################################
+:: ##########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -503,43 +509,6 @@ endlocal
 
 
 
-
-
-
-
-
-
-:: ##########################################################################################
-:: ##########################################################################################
-:: ##########################################################################################
-:: -----------------------------------------------------------------------------------------
-:: prompt user to install Wamp; Apache, PHP, and MySQL
-echo "Wamp includes installations of Apache, PHP, and MySQL"
-echo "Would you like to download and install Wamp?"
-@echo off
-setlocal
-:PROMPT
-SET /P AREYOUSURE=Are you sure (Y/[N])?
-IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
-:: -----------------------------------------------------------------------------------------
-
-
-
-:: -----------------------------------------------------------------------------------------
-:: Download Chrome installer
-echo "Downloading Wamp installer"
-
-@echo off
-start/min iexplore https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.1.9_x64.exe/download?use_mirror=newcontinuum&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fwampserver%2Ffiles%2Flatest%2Fdownload
-PING 1.1.1.1 -n 1 -w 10000 >NUL
-taskkill -IM iexplore.exe
-@echo off
-:END
-endlocal
-:: -----------------------------------------------------------------------------------------
-:: ##########################################################################################
-:: ##########################################################################################
-:: ##########################################################################################
 
 
 
