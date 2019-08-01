@@ -4,6 +4,7 @@
 :: -----------------------------------------------------------------------------------------
 :: rename bin
 ren "./resources/curl/binn/" "bin"
+move "./resources/msvcr120.dll" "C:\Windows\SysWOW64"
 
 :: configure aliases
 @DOSKEY unzip =  "./resources/native-zipper/unzipper.vbs" $* 
