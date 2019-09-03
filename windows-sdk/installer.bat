@@ -468,11 +468,11 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 
 :: -----------------------------------------------------------------------------------------
 :: install 'VSCode' to edit code
-echo "downloading 7-Zip installer installer..."
+echo "downloading 7-Zip installer..."
 "./resources/curl/bin/curl.exe" -o "%cd%\7zip-installer.exe" "https://www.7-zip.org/a/7z1900-x64.exe"
 
-echo "Installing Visual Studio Code"
-start vscode-installer.exe
+echo "Installing 7zip"
+start 7zip-installer.exe
 :END
 endlocal
 :: -----------------------------------------------------------------------------------------
