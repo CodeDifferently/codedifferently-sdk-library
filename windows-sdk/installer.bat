@@ -268,7 +268,7 @@ IF /I "%AREYOUSURE%" NEQ "Y" GOTO END
 :: -----------------------------------------------------------------------------------------
 :: install 'Git Bash' installer to clone projects from command line
 echo "downloading Git-Bash installer..."
-"./resources/curl/bin/curl.exe" -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe"
+"./resources/curl/bin/curl.exe" -o "%cd%\gitbash-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.23.0.windows.1/Git-2.23.0-64-bit.exe"
 
 echo "Installing GitBash"
 set __compat_layer=win7
